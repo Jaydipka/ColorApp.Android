@@ -1,0 +1,51 @@
+package com.example.colorapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button blueBtn, greenBtn, blackBtn;
+    LinearLayout layout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        blueBtn = findViewById(R.id.blueBtn);
+        greenBtn = findViewById(R.id.greenBtn);
+        blackBtn = findViewById(R.id.blackBtn);
+
+        layout = findViewById(R.id.linearLayout);
+
+        blackBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                layout.setBackgroundColor(Color.BLACK);
+            }
+
+        });
+
+        blueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layout.setBackgroundColor(Color.BLUE);
+            }
+        });
+
+        greenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layout.setBackgroundColor(Color.GREEN);
+            }
+        });
+    }
+}
