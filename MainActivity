@@ -1,0 +1,35 @@
+package com.example.intent;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button click;
+    EditText ed;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        click = findViewById(R.id.Click);
+        ed = findViewById(R.id.editTextTextPersonName);
+
+
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(getApplicationContext(),SecoundActivity.class);
+
+                String msg = ed.getText().toString();
+                i.putExtra("str",msg);
+                startActivity(i);
+            }
+        });
+    }
+}
